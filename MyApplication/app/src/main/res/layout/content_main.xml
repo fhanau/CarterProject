@@ -12,21 +12,43 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world_also_bei_mir_l_uft_es_unter_android_studio_auf_dem_per_usb_verbundenen_ger_t_auch_wenn_die_einrichtung"
-        android:id="@+id/textView2" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Impressum"
         android:id="@+id/buttono"
-        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="69dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beispiellebenslauf"
+        android:id="@+id/button"
+        android:layout_below="@+id/buttono"
+        android:layout_alignLeft="@+id/buttono"
+        android:layout_alignStart="@+id/buttono" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:id="@+id/imageView2"
+        android:contentDescription="@string/titel"
+        android:layout_alignLeft="@+id/buttono"
+        android:layout_alignStart="@+id/buttono"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bild machen"
+        android:id="@+id/button2"
+        android:layout_below="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
 </RelativeLayout>

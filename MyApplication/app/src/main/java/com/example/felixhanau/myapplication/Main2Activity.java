@@ -16,19 +16,23 @@ public class Main2Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         android.webkit.WebView wv = (android.webkit.WebView)findViewById(R.id.wView);
-        //wv.loadUrl("file:///android_asset/myweb.html");
-        wv.loadUrl("file:///android_asset/index1.html");
-        //wv.loadUrl("http://x.org/");
+
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String value = extras.getString("Sitename");
+            String value2 = extras.getString("Filename");
+            setTitle(value);
+            wv.loadUrl(value2);
+        }
+        else {
+            //wv.loadUrl("file:///android_asset/myweb.html");
+            //wv.loadUrl("file:///android_asset/index1.html");
+            wv.loadUrl("file:///android_asset/impressum.html");
+            //wv.loadUrl("http://x.org/");
+        }
     }
 
 }

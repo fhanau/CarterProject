@@ -12,10 +12,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
+import java.io.File;
 import android.widget.Button;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                startActivityForResult(takePictureIntent, 1);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,29 +36,60 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-        android.widget.Button btn;// = new android.widget.Button(this);
+        android.widget.Button btn, btn2, btn3;// = new android.widget.Button(this);
         btn = (android.widget.Button)findViewById(R.id.buttono);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new android.content.Intent(MainActivity.this, Main2Activity.class));
+
+
+                android.content.Intent i = new android.content.Intent(getApplicationContext(), Main2Activity.class);
+
+                i.putExtra("Sitename","Impressum");
+                i.putExtra("Filename","file:///android_asset/impressum.html");
+                startActivity(i);
             }
         });
+        btn2 = (android.widget.Button)findViewById(R.id.button);
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                android.content.Intent i = new android.content.Intent(getApplicationContext(), Main2Activity.class);
+
+                i.putExtra("Sitename","Example");
+                i.putExtra("Filename","file:///android_asset/index1.html");
+                startActivity(i);
+            }
+        });
+        btn3 = (android.widget.Button)findViewById(R.id.button2);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dispatchTakePictureIntent();
+
+            }
+        });
+
+        android.widget.ImageView img= (android.widget.ImageView) findViewById(R.id.imageView2);
+        // get input stream
+        java.io.InputStream imagestream = null;
+        try {
+            imagestream = getAssets().open("bimage.png");
+        } catch (IOException e) {}
+        // load image as Drawable
+        android.graphics.drawable.Drawable d = android.graphics.drawable.Drawable.createFromStream(imagestream, null);
+        //android.graphics.
+        img.setImageDrawable(d);
+        //img.
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);

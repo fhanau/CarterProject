@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Stolpersteine Bad Homburg</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="hello_world_also_bei_mir_l_uft_es_unter_android_studio_auf_dem_per_usb_verbundenen_ger_t_auch_wenn_die_einrichtung">Hello World! Also bei mir läuft es unter Android Studio auf dem per USB verbundenen Gerät, auch wenn die Einrichtung</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="titel">Titel</string>
 </resources>
