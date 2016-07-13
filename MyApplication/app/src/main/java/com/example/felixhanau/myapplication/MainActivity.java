@@ -21,14 +21,6 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                startActivityForResult(takePictureIntent, 1);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,12 +53,10 @@ public class MainActivity extends AppCompatActivity
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 android.content.Intent i = new android.content.Intent(getApplicationContext(), Main2Activity.class);
 
-                i.putExtra("Sitename","Example");
-                i.putExtra("Filename","file:///android_asset/index1.html");
+                i.putExtra("Sitename","Salomon & Anneliese Kottek");
+                i.putExtra("Filename","file:///android_asset/Prototype.html");
                 startActivity(i);
             }
         });
@@ -74,7 +64,7 @@ public class MainActivity extends AppCompatActivity
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dispatchTakePictureIntent();
+
 
             }
         });
@@ -128,7 +118,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+    /*Can be omitted*/@SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
