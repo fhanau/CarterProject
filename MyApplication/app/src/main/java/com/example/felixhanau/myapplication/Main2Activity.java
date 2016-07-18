@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.WebView;
+import android.view.View.OnKeyListener;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -18,7 +20,33 @@ public class Main2Activity extends AppCompatActivity {
 
 
         android.webkit.WebView wv = (android.webkit.WebView)findViewById(R.id.wView);
+        wv.getSettings().setBuiltInZoomControls(true);
 
+
+        wv.setOnKeyListener(new OnKeyListener()
+        {
+            @Override
+            public boolean onKey(View v, int keyCode, android.view.KeyEvent event)
+            {
+                if(event.getAction() == android.view.KeyEvent.ACTION_DOWN)
+                {
+                    WebView webView = (WebView) v;
+
+                    switch(keyCode)
+                    {
+                        case android.view.KeyEvent.KEYCODE_BACK:
+                            if(webView.canGoBack())
+                            {
+                                webView.goBack();
+                                return true;
+                            }
+                            break;
+                    }
+                }
+
+                return false;
+            }
+        });
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
