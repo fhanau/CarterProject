@@ -20,6 +20,25 @@ public class Main2Activity extends AppCompatActivity {
 
 
         android.webkit.WebView wv = (android.webkit.WebView)findViewById(R.id.wView);
+
+
+        wv.setWebViewClient(new android.webkit.WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                setTitle(view.getTitle());
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if(android.net.Uri.parse(url).getHost().length() == 0) {
+                    return false;
+                }
+
+                android.content.Intent intent = new android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(url));
+                view.getContext().startActivity(intent);
+                return true;
+            }
+        });
         wv.getSettings().setBuiltInZoomControls(true);
 
 

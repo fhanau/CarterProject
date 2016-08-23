@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 android.content.Intent i = new android.content.Intent(getApplicationContext(), Main2Activity.class);
 
-                i.putExtra("Sitename","Salomon & Anneliese Kottek");
-                i.putExtra("Filename","file:///android_asset/Prototype.html");
+                i.putExtra("Sitename","Index");
+                i.putExtra("Filename","file:///android_asset/index.html");
                 startActivity(i);
             }
         });
