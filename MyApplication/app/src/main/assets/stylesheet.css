@@ -1,0 +1,32 @@
+body {
+    font-family: Calibri, Arial, sans-serif;
+}
+
+.Text {
+   margin: 20px;
+}
+
+.Headline {
+    color:#867650;
+    font-family: DejaVu Serif, Times New Roman, Times, serif;
+    margin: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.Subline {
+  color:#867650;
+
+    font-weight: bold;
+    font-style: italic;
+}
+
+#main-container {
+    margin: 0 auto;
+}
+img {
+  max-width: 100%;
+  max-height: 100%
+}
