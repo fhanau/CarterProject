@@ -17,6 +17,8 @@ body {
 }
 
 .Subline {
+  margin: 0px;
+
   color:#867650;
 
     font-weight: bold;
