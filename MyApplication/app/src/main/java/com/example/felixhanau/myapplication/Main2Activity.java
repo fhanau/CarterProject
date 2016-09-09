@@ -42,6 +42,9 @@ public class Main2Activity extends AppCompatActivity {
         wv.getSettings().setBuiltInZoomControls(true);
 
 
+        wv.getSettings().setJavaScriptEnabled(true);
+
+
         wv.setOnKeyListener(new OnKeyListener()
         {
             @Override

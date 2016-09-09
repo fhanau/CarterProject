@@ -64,8 +64,11 @@ public class MainActivity extends AppCompatActivity
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                android.content.Intent i = new android.content.Intent(getApplicationContext(), Main2Activity.class);
 
-
+                i.putExtra("Sitename","Karte");
+                i.putExtra("Filename","file:///android_asset/gfx.html");
+                startActivity(i);
             }
         });
 

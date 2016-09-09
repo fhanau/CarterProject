@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+<head>
+
+<title>Karte</title>
+
+<style type="text/css">
+html { height: 100% }
+body { height: 100%; margin: 0px; padding: 0px }
+#map-canvas {
+	height: 100%;
+}
+
+</style>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=de"></script>
+<script type="text/javascript">
+
+function initialize() {
+	var myLatlng = new google.maps.LatLng(50.229590, 8.612280);
+  var wallstrasse = myLatlng;
+  var obergasse = new google.maps.LatLng(50.23136, 8.61218);
+  var kfp = new google.maps.LatLng(50.22979, 8.61493);
+  var kfpi = new google.maps.LatLng(50.22963, 8.61622);
+
+
+	var mapOptions = {
+		zoom: 14,
+		center: myLatlng,
+		disableDefaultUI: false
+	}
+	
+	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  var image = 'Stolperstein.png';
+
+	var marker = new google.maps.Marker({
+		position: wallstrasse,
+		map: map,
+    icon: image
+	});
+
+var markeri = new google.maps.Marker({
+  position: kfp,
+   map: map,
+   icon: image
+  });
+
+var markerii = new google.maps.Marker({
+ position: kfpi,
+ map: map,
+ icon: image
+ });
+
+var markeriii = new google.maps.Marker({
+ position: obergasse,
+ map: map,
+ icon: image
+ });
+
+
+var contentString = '<h3>Wallstraße 11</h3>'+
+'<p><a href="Helene_Adler.html">Helene Adler (geb. Gutmann)</a></p>'+
+'<p><a href="Margot_Frieda_Adler.html">Margot Frieda Adler</a></p>'+
+'<p><a href="Franziska_Gutmann.html">Franziska Gutmann</a></p>'+
+'<p><a href="Ludwig_Gutmann.html">Ludwig Gutmann</a></p>';
+
+var contentStringi = '<h3>Kaiser-Friedrich-Promenade 11</h3>'+
+'<p><a href="Salomon_Anneliese_Kottek.html">Dr. Salomon Kottek und Anneliese Kottek, geb. Loeb</a></p>';
+
+var contentStringii = '<h3>Kaiser-Friedrich-Promenade 14</h3>'+
+'<p><a href="Hugo_Auguste_Eppstein.html">Hugo und Auguste Eppstein, geb. Löwenthal</a></p>'+
+'<p><a href="Franziska_Therese_Idstein.html">Franziska und Therese Idstein</a></p>';
+
+
+var contentStringiii = '<h3>Obergasse 15</h3>'+
+'<p><a href="Johanna_Lang.html">Johanna Lang</a></p>';
+
+var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                                            });
+marker.addListener('click', function()
+{
+                   infowindowi.close();
+                   infowindowii.close();
+                   infowindowiii.close();
+ infowindow.open(map, marker);
+});
+
+var infowindowi = new google.maps.InfoWindow({
+                                        content: contentStringi
+                                        });
+                                        markeri.addListener('click', function()
+                                                           {
+                                                            infowindow.close();
+                                                            infowindowii.close();
+                                                            infowindowiii.close();
+                                                           infowindowi.open(map, markeri);
+                                                           });
+
+var infowindowii = new google.maps.InfoWindow({
+                                        content: contentStringii
+                                        });
+                                        markerii.addListener('click', function()
+                                                           {
+                                                             infowindow.close();
+                                                             infowindowi.close();
+                                                             infowindowiii.close();
+                                                           infowindowii.open(map, markerii);
+                                                           });
+
+var infowindowiii = new google.maps.InfoWindow({
+                                        content: contentStringiii
+                                        });
+                                        markeriii.addListener('click', function()
+                                                           {
+                                                              infowindow.close();
+                                                              infowindowi.close();
+                                                              infowindowii.close();
+                                                           infowindowiii.open(map, markeriii);
+                                                           });
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+</head>
+<body>
+
+	<div id="map-canvas">
+	</div>
+
+</body>
+</html>
