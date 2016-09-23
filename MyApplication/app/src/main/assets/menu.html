@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<head>
+<base target="IFrame" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link href="stylesheet.css" rel="stylesheet">
+<script src="iframeResizer.min.js"></script>
+<script type='text/javascript'>
+function func(text){
+  var tex = text.substring(22);
+  switch (tex){
+    case "main.html":
+    document.getElementById("title").innerHTML = "Start";
+    break;
+    case "index.html":
+    document.getElementById("title").innerHTML = "Lebensläufe";
+    break;
+    case "namen.html":
+    document.getElementById("title").innerHTML = "Namen";
+    break;
+    case "gfx.html":
+    document.getElementById("title").innerHTML = "Karte";
+    break;
+    case "links.html":
+    document.getElementById("title").innerHTML = "Links";
+    break;
+    case "spende.html":
+    document.getElementById("title").innerHTML = "Spenden";
+    break;
+    case "impressum.html":
+    document.getElementById("title").innerHTML = "Impressum";
+    break;
+    case "Helene_Adler.html":
+    document.getElementById("title").innerHTML = "Helene Adler (geb. Gutmann)";
+    break;
+    case "Margot_Frieda_Adler.html":
+    document.getElementById("title").innerHTML = "Margot Frieda Adler";
+    break;
+    case "Franziska_Gutmann.html":
+    document.getElementById("title").innerHTML = "Franziska Gutmann";
+    break;
+    case "Ludwig_Gutmann.html":
+    document.getElementById("title").innerHTML = "Ludwig Gutmann";
+    break;
+    case "Hugo_Auguste_Eppstein.html":
+    document.getElementById("title").innerHTML = "<div style='font-size:13px'>Hugo und Auguste Eppstein, geb. Löwenthal</div>";
+    break;
+    case "Franziska_Therese_Idstein.html":
+    document.getElementById("title").innerHTML = "Franziska und Therese Idstein";
+    break;
+    case "Salomon_Anneliese_Kottek.html":
+    document.getElementById("title").innerHTML = "<div style='font-size:11px'>Dr. Salomon Kottek und Anneliese Kottek, geb. Loeb</div>";
+    break;
+    case "Johanna_Lang.html":
+    document.getElementById("title").innerHTML = "Johanna Lang";
+    break;
+    default:
+    break;
+  }
+}
+
+window.onmessage = function(msg){
+  if(msg.data.substring(0,8) == "file:///")
+  func(msg.data);
+};
+</script>
+<style>
+
+/*
+
+ Copyright (c) 2014 - Phil Hoytr
+ - https://codepen.io/philhoyt/pen/ujHzd
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall
+be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+*/
+#primary_nav_wrap ul
+{
+  left: -40px;
+  top: -47px;
+  position:relative;
+}
+
+#primary_nav_wrap ul a
+{
+  display:block;
+  color:#333;
+  text-decoration:none;
+  font-weight:700;
+  font-size:12px;
+  line-height:32px;
+  padding:0 15px;
+}
+
+#primary_nav_wrap ul li
+{
+  position:relative;
+  float:left;
+}
+
+#primary_nav_wrap ul ul
+{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+  width:110px
+}
+
+#primary_nav_wrap ul ul a
+{
+  line-height:120%;
+  padding:10px 12px
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+  display:block
+}
+
+</style>
+</head>
+<body>
+    <p style="text-align:center;"><img src="bimage.png"></p>
+    <div id="rbox"><p id="title">Start
+</p></div>
+    <nav id="primary_nav_wrap">
+      <ul>
+        <li><a style="color:white; font-size: 20pt;">&#9776;</a>
+          <ul>
+<li><a href="main.html">Start</a></li>
+<li><a href="index.html">Lebensläufe</a></li>
+<li><a href="namen.html">Namensliste</a></li>
+<li><a href="gfx.html">Karte</a></li>
+<li><a href="links.html">Links</a></li>
+<li><a href="spende.html">Spenden</a></li>
+<li><a href="impressum.html">Impressum</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <iframe frameborder="0" scrolling="no" id="IFrame" name="IFrame" src="main.html" ></iframe>
+    <script>iFrameResize({checkOrigin:false, inPageLinks:true, heightCalculationMethod:'lowestElement'})</script>
+  </body>
+</html>

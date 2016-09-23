@@ -1,5 +1,7 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="iframeResizer.contentWindow.min.js"></script>
+<base target="_main" />
 <html>
 <head>
 
@@ -9,7 +11,8 @@
 html { height: 100% }
 body { height: 100%; margin: 0px; padding: 0px }
 #map-canvas {
-	height: 100%;
+	height: 110vw;
+  width: 100vw;
 }
 
 </style>
@@ -26,7 +29,7 @@ function initialize() {
 
 
 	var mapOptions = {
-		zoom: 14,
+		zoom: 15,
 		center: myLatlng,
 		disableDefaultUI: false
 	}
@@ -60,21 +63,21 @@ var markeriii = new google.maps.Marker({
 
 
 var contentString = '<h3>Wallstraße 11</h3>'+
-'<p><a href="Helene_Adler.html">Helene Adler (geb. Gutmann)</a></p>'+
-'<p><a href="Margot_Frieda_Adler.html">Margot Frieda Adler</a></p>'+
-'<p><a href="Franziska_Gutmann.html">Franziska Gutmann</a></p>'+
-'<p><a href="Ludwig_Gutmann.html">Ludwig Gutmann</a></p>';
+'<p><a href="Helene_Adler.html" target="IFrame">Helene Adler (geb. Gutmann)</a></p>'+
+'<p><a href="Margot_Frieda_Adler.html" target="IFrame">Margot Frieda Adler</a></p>'+
+'<p><a href="Franziska_Gutmann.html" target="IFrame">Franziska Gutmann</a></p>'+
+'<p><a href="Ludwig_Gutmann.html" target="IFrame">Ludwig Gutmann</a></p>';
 
 var contentStringi = '<h3>Kaiser-Friedrich-Promenade 11</h3>'+
-'<p><a href="Salomon_Anneliese_Kottek.html">Dr. Salomon Kottek und Anneliese Kottek, geb. Loeb</a></p>';
+'<p><a href="Salomon_Anneliese_Kottek.html" target="IFrame">Dr. Salomon Kottek und Anneliese Kottek, geb. Loeb</a></p>';
 
 var contentStringii = '<h3>Kaiser-Friedrich-Promenade 14</h3>'+
-'<p><a href="Hugo_Auguste_Eppstein.html">Hugo und Auguste Eppstein, geb. Löwenthal</a></p>'+
-'<p><a href="Franziska_Therese_Idstein.html">Franziska und Therese Idstein</a></p>';
+'<p><a href="Hugo_Auguste_Eppstein.html" target="IFrame">Hugo und Auguste Eppstein, geb. Löwenthal</a></p>'+
+'<p><a href="Franziska_Therese_Idstein.html" target="IFrame">Franziska und Therese Idstein</a></p>';
 
 
 var contentStringiii = '<h3>Obergasse 15</h3>'+
-'<p><a href="Johanna_Lang.html">Johanna Lang</a></p>';
+'<p><a href="Johanna_Lang.html" target="IFrame">Johanna Lang</a></p>';
 
 var infowindow = new google.maps.InfoWindow({
                     content: contentString
@@ -128,6 +131,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </head>
 <body>
+  <script>
+    window.top.postMessage(document.URL, '*');
+    </script>
 
 	<div id="map-canvas">
 	</div>
