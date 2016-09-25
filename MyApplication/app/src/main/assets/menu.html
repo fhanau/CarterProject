@@ -58,6 +58,12 @@ function func(text){
   }
 }
 
+function anarchy(){
+  var save = document.getElementById("changable").innerHTML;
+  document.getElementById("changable").innerHTML = "";
+  document.getElementById("changable").innerHTML = save;
+}
+
 window.onmessage = function(msg){
   if(msg.data.substring(0,8) == "file:///")
   func(msg.data);
@@ -147,21 +153,23 @@ DEALINGS IN THE SOFTWARE.
     <p style="text-align:center;"><img src="bimage.png"></p>
     <div id="rbox"><p id="title">Start
 </p></div>
+    <div id="changable">
     <nav id="primary_nav_wrap">
       <ul>
         <li><a style="color:white; font-size: 20pt;">&#9776;</a>
           <ul>
-<li><a href="main.html">Start</a></li>
-<li><a href="index.html">Lebensläufe</a></li>
-<li><a href="namen.html">Namensliste</a></li>
-<li><a href="gfx.html">Karte</a></li>
-<li><a href="links.html">Links</a></li>
-<li><a href="spende.html">Spenden</a></li>
-<li><a href="impressum.html">Impressum</a></li>
+<li></li>
+<li><a onclick="anarchy();" href="main.html">Start</a></li>
+<li><a onclick="anarchy();" href="index.html">Lebensläufe</a></li>
+<li><a onclick="anarchy();" href="namen.html">Namensliste</a></li>
+<li><a onclick="anarchy();" href="gfx.html">Karte</a></li>
+<li><a onclick="anarchy();" href="links.html">Links</a></li>
+<li><a onclick="anarchy();" href="spende.html">Spenden</a></li>
+<li><a onclick="anarchy();" href="impressum.html">Impressum</a></li>
           </ul>
         </li>
       </ul>
-    </nav>
+    </nav></div>
     <iframe frameborder="0" scrolling="no" id="IFrame" name="IFrame" src="main.html" ></iframe>
     <script>iFrameResize({checkOrigin:false, inPageLinks:true, heightCalculationMethod:'lowestElement'})</script>
   </body>
