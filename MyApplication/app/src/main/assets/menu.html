@@ -15,7 +15,7 @@ function func(text){
     document.getElementById("title").innerHTML = "Lebensläufe";
     break;
     case "namen.html":
-    document.getElementById("title").innerHTML = "Namen";
+    document.getElementById("title").innerHTML = "Namen (nach Ort)";
     break;
     case "gfx.html":
     document.getElementById("title").innerHTML = "Karte";
@@ -140,7 +140,10 @@ DEALINGS IN THE SOFTWARE.
 {
   line-height:120%;
   padding:10px 12px
+  /*box-shadow: 10px 0px grey;*/
 }
+
+#primary_nav_wrap ul {box-shadow: 4px 4px 12px #999}
 
 #primary_nav_wrap ul li:hover > ul
 {
@@ -161,7 +164,7 @@ DEALINGS IN THE SOFTWARE.
 <li></li>
 <li><a onclick="anarchy();" href="main.html">Start</a></li>
 <li><a onclick="anarchy();" href="index.html">Lebensläufe</a></li>
-<li><a onclick="anarchy();" href="namen.html">Namensliste</a></li>
+<li><a onclick="anarchy();" href="namen.html">Namensliste (nach Ort)</a></li>
 <li><a onclick="anarchy();" href="gfx.html">Karte</a></li>
 <li><a onclick="anarchy();" href="links.html">Links</a></li>
 <li><a onclick="anarchy();" href="spende.html">Spenden</a></li>

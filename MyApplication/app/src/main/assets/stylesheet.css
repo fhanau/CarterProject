@@ -11,18 +11,25 @@ body {
 .Headline {
   color:#867650;
   font-family: DejaVu Serif, Times New Roman, Times, serif;
-  margin: 2px;
-  margin-top: 30px;
+  margin: 20px;
   margin-bottom: 30px;
   font-weight: bold;
   font-size: 20pt;
 }
 
 .Subline {
-  margin: 0px;
+  margin: 20px;
+  color:#867650;
+  font-weight: bold;
+  font-size: 15pt;
+}
+
+.Subtext {
+  margin: 20px;
   color:#867650;
   font-weight: bold;
   font-style: italic;
+  font-size: 13pt;
 }
 
 img {
