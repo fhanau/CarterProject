@@ -15,7 +15,7 @@ function func(text){
     document.getElementById("title").innerHTML = "Lebensläufe";
     break;
     case "namen.html":
-    document.getElementById("title").innerHTML = "Namen (nach Ort)";
+    document.getElementById("title").innerHTML = "Namen nach Orten";
     break;
     case "gfx.html":
     document.getElementById("title").innerHTML = "Karte";
@@ -58,7 +58,7 @@ function func(text){
   }
 }
 
-function anarchy(){
+function hidemenu(){
   var save = document.getElementById("changable").innerHTML;
   document.getElementById("changable").innerHTML = "";
   document.getElementById("changable").innerHTML = save;
@@ -145,11 +145,22 @@ DEALINGS IN THE SOFTWARE.
 
 #primary_nav_wrap ul {box-shadow: 4px 4px 12px #999}
 
+#primary_nav_wrap ul li:active > ul
+{
+  display:block
+}
+#primary_nav_wrap ul li:focus > ul
+{
+  display:block
+}
+#primary_nav_wrap ul li:active > ul
+{
+  display:block
+}
 #primary_nav_wrap ul li:hover > ul
 {
   display:block
 }
-
 </style>
 </head>
 <body>
@@ -159,16 +170,16 @@ DEALINGS IN THE SOFTWARE.
     <div id="changable">
     <nav id="primary_nav_wrap">
       <ul>
-        <li><a style="color:white; font-size: 20pt;">&#9776;</a>
+        <li><a href="#" style="color:white; font-size: 20pt;">&#9776;</a>
           <ul>
 <li></li>
-<li><a onclick="anarchy();" href="main.html">Start</a></li>
-<li><a onclick="anarchy();" href="index.html">Lebensläufe</a></li>
-<li><a onclick="anarchy();" href="namen.html">Namensliste (nach Ort)</a></li>
-<li><a onclick="anarchy();" href="gfx.html">Karte</a></li>
-<li><a onclick="anarchy();" href="links.html">Links</a></li>
-<li><a onclick="anarchy();" href="spende.html">Spenden</a></li>
-<li><a onclick="anarchy();" href="impressum.html">Impressum</a></li>
+<li><a onclick="hidemenu();" href="main.html">Start</a></li>
+<li><a onclick="hidemenu();" href="index.html">Lebensläufe</a></li>
+<li><a onclick="hidemenu();" href="namen.html">Namensliste nach Ort</a></li>
+<li><a onclick="hidemenu();" href="gfx.html">Karte</a></li>
+<li><a onclick="hidemenu();" href="links.html">Links</a></li>
+<li><a onclick="hidemenu();" href="spende.html">Spenden</a></li>
+<li><a onclick="hidemenu();" href="impressum.html">Impressum</a></li>
           </ul>
         </li>
       </ul>
