@@ -19,6 +19,11 @@ public class Main2Activity extends AppCompatActivity {
         wv.setWebViewClient(new android.webkit.WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if(url.startsWith("mailto:")){
+                    Intent i = new Intent(Intent.ACTION_SENDTO, Uri.parse(url));
+                    startActivity(i);
+                    return true;
+                }
                 if(Uri.parse(url).getHost().length() == 0) {
                     return false;
                 }
