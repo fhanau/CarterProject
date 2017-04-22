@@ -24,6 +24,14 @@ body {
   font-size: 15pt;
 }
 
+.Description {
+  margin: 20px;
+  color:#867650;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 13pt;
+}
+
 .Subtext {
   margin: 20px;
   color:#867650;
