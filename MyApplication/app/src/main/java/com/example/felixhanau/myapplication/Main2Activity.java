@@ -19,6 +19,17 @@ public class Main2Activity extends AppCompatActivity {
         wv.setWebViewClient(new android.webkit.WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if(url.startsWith("gmaps:")){
+                    int num = Integer.parseInt(url.substring(6));
+                    String[] address = {"Wallstraße+11", "Kaiser-Friedrich-Promenade+11", "Kaiser-Friedrich-Promenade+14", "Obergasse+15", "Kaiser-Friedrich-Promenade+74",
+                            "Kaiser-Friedrich-Promenade+76", "Georg-Speyer-Straße+4", "Kisseleffstraße+14",
+                            "Louisenstraße+97", "Schöne Aussicht+24", "Schwedenpfad+22"};
+                    Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?daddr=" + address[num] + ",+Bad+Homburg"); // Too aggressive
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    startActivity(mapIntent);
+                    return true;
+                }
                 if(url.startsWith("mailto:")){
                     Intent i = new Intent(Intent.ACTION_SENDTO, Uri.parse(url));
                     startActivity(i);
