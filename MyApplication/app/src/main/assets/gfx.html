@@ -22,8 +22,8 @@ imgx {max-height: 300px; max-width:300px;}
 <script type="text/javascript">
 
 function initialize() {
-	var myLatlng = new google.maps.LatLng(50.22959, 8.61228);
-  var wallstrasse = myLatlng;
+	var myLatlng = new google.maps.LatLng(50.22937, 8.61861);
+  var wallstrasse = new google.maps.LatLng(50.22959, 8.61228);
   var obergasse = new google.maps.LatLng(50.23136, 8.61218);
   var kfp = new google.maps.LatLng(50.22979, 8.61493);
   var kfpi = new google.maps.LatLng(50.22963, 8.61622);
@@ -36,9 +36,9 @@ function initialize() {
   var schwedenpfad = new google.maps.LatLng(50.22937, 8.61861);
 
 	var mapOptions = {
-		zoom: 15,
+		zoom: 14,
 		center: myLatlng,
-		disableDefaultUI: false
+		disableDefaultUI: true
 	}
 	
 	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -151,7 +151,7 @@ var contentString5 = '<h3>Louisenstraße 97</h3>'+
 '<p><a href="gmaps:8" target="IFrame">Weg berechnen</a></p>';
 
 var contentString6 = '<h3>Schöne Aussicht 24</h3>'+
-'<p><a href="Klieneberger_Schönemann.html.html" target="IFrame">Sophie Klieneberger, geb. Hamburger und Anna Schönemann, geb. Klieneberger</a></p>' +
+'<p><a href="Klieneberger.html" target="IFrame">Sophie Klieneberger, geb. Hamburger und Anna Schönemann, geb. Klieneberger</a></p>' +
 '<p><a href="gmaps:9" target="IFrame">Weg berechnen</a></p>';
 
 var contentString7 = '<h3>Schwedenpfad 22</h3>'+
@@ -226,7 +226,7 @@ var infowindowiii = new google.maps.InfoWindow({
 var infowindow1 = new google.maps.InfoWindow({
                                                content: contentString1
                                                });
-                                               markeriii.addListener('click', function()
+                                               marker1.addListener('click', function()
                                                                      {
                                                                      infowindow.close();
                                                                      infowindowi.close();
@@ -238,13 +238,13 @@ var infowindow1 = new google.maps.InfoWindow({
                                                                      infowindow5.close();
                                                                      infowindow6.close();
                                                                      infowindow7.close();
-                                                                     infowindow1.open(map, markeriii);
+                                                                     infowindow1.open(map, marker1);
                                                                      });
 
 var infowindow2 = new google.maps.InfoWindow({
                                              content: contentString2
                                              });
-                                             markeriii.addListener('click', function()
+                                             marker2.addListener('click', function()
                                                                    {
                                                                    infowindow.close();
                                                                    infowindowi.close();
@@ -256,13 +256,13 @@ var infowindow2 = new google.maps.InfoWindow({
                                                                    infowindow5.close();
                                                                    infowindow6.close();
                                                                    infowindow7.close();
-                                                                   infowindow2.open(map, markeriii);
+                                                                   infowindow2.open(map, marker2);
                                                                    });
 
 var infowindow3 = new google.maps.InfoWindow({
                                              content: contentString3
                                              });
-                                             markeriii.addListener('click', function()
+                                             marker3.addListener('click', function()
                                                                    {
                                                                    infowindow.close();
                                                                    infowindowi.close();
@@ -274,13 +274,13 @@ var infowindow3 = new google.maps.InfoWindow({
                                                                    infowindow5.close();
                                                                    infowindow6.close();
                                                                    infowindow7.close();
-                                                                   infowindow3.open(map, markeriii);
+                                                                   infowindow3.open(map, marker3);
                                                                    });
 
 var infowindow4 = new google.maps.InfoWindow({
                                              content: contentString4
                                              });
-                                             markeriii.addListener('click', function()
+                                             marker4.addListener('click', function()
                                                                    {
                                                                    infowindow.close();
                                                                    infowindowi.close();
@@ -292,13 +292,13 @@ var infowindow4 = new google.maps.InfoWindow({
                                                                    infowindow5.close();
                                                                    infowindow6.close();
                                                                    infowindow7.close();
-                                                                   infowindow4.open(map, markeriii);
+                                                                   infowindow4.open(map, marker4);
                                                                    });
 
 var infowindow5 = new google.maps.InfoWindow({
                                              content: contentString5
                                              });
-                                             markeriii.addListener('click', function()
+                                             marker5.addListener('click', function()
                                                                    {
                                                                    infowindow.close();
                                                                    infowindowi.close();
@@ -310,13 +310,13 @@ var infowindow5 = new google.maps.InfoWindow({
                                                                    infowindow4.close();
                                                                    infowindow6.close();
                                                                    infowindow7.close();
-                                                                   infowindow5.open(map, markeriii);
+                                                                   infowindow5.open(map, marker5);
                                                                    });
 
 var infowindow6 = new google.maps.InfoWindow({
                                              content: contentString6
                                              });
-                                             markeriii.addListener('click', function()
+                                             marker6.addListener('click', function()
                                                                    {
                                                                    infowindow.close();
                                                                    infowindowi.close();
@@ -328,13 +328,13 @@ var infowindow6 = new google.maps.InfoWindow({
                                                                    infowindow4.close();
                                                                    infowindow5.close();
                                                                    infowindow7.close();
-                                                                   infowindow6.open(map, markeriii);
+                                                                   infowindow6.open(map, marker6);
                                                                    });
 
 var infowindow7 = new google.maps.InfoWindow({
                                              content: contentString7
                                              });
-                                             markeriii.addListener('click', function()
+                                             marker7.addListener('click', function()
                                                                    {
                                                                    infowindow.close();
                                                                    infowindowi.close();
@@ -346,7 +346,7 @@ var infowindow7 = new google.maps.InfoWindow({
                                                                    infowindow4.close();
                                                                    infowindow5.close();
                                                                    infowindow6.close();
-                                                                   infowindow7.open(map, markeriii);
+                                                                   infowindow7.open(map, marker7);
                                                                    });
 
 }
