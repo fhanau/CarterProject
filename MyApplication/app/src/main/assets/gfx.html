@@ -112,10 +112,11 @@ var marker7 = new google.maps.Marker({
 
 
 var contentString = '<h3>Wallstraße 11</h3>'+
-'<div><img height="90" width="160" id="imgx" src="img/Bild01.jpg"/></div><p><a href="Helene_Adler.html" target="IFrame">Helene Adler (geb. Gutmann)</a></p>'+
-'<p><a href="Margot_Frieda_Adler.html" target="IFrame">Margot Frieda Adler</a></p>'+
-'<p><a href="Franziska_Gutmann.html" target="IFrame">Franziska Gutmann</a></p>'+
-'<p><a href="Ludwig_Gutmann.html" target="IFrame">Ludwig Gutmann</a></p>';
+'<div><img height="81" width="144" id="imgx" src="img/Bild01.jpg"/></div><p style="font-size:11px"><a href="Helene_Adler.html" target="IFrame">Helene Adler (geb. Gutmann)</a></p>'+
+'<p style="font-size:11px"><a href="Margot_Frieda_Adler.html" target="IFrame">Margot Frieda Adler</a></p>'+
+'<p style="font-size:11px"><a href="Franziska_Gutmann.html" target="IFrame">Franziska Gutmann</a></p>'+
+'<p style="font-size:11px"><a href="Ludwig_Gutmann.html" target="IFrame">Ludwig Gutmann</a></p>'+
+'<p style="font-size:11px"><a href="gmaps:0" target="IFrame">Weg berechnen</a></p>';
 
 var contentStringi = '<h3>Kaiser-Friedrich-Promenade 11</h3><div><img height="90" width="160" id="imgx" src="img/Bild07.jpg"/></div>'+
 '<p><a href="Salomon_Anneliese_Kottek.html" target="IFrame">Dr. Salomon Kottek und Anneliese Kottek, geb. Loeb</a></p>' +
@@ -159,14 +160,20 @@ var contentString7 = '<h3>Schwedenpfad 22</h3>'+
 '<p><a href="gmaps:10" target="IFrame">Weg berechnen</a></p>';
 
 var infowindow = new google.maps.InfoWindow({
-                                            content: contentString + '<p><a href="gmaps:0" target="IFrame">Weg berechnen</a></p>'
+                                            content: contentString
                                             });
 marker.addListener('click', function()
 {
-                   infowindowi.close();
-                   infowindowii.close();
-                   infowindowiii.close();
- infowindow.open(map, marker);
+                                                            infowindowii.close();
+                                                            infowindowiii.close();
+                                                            infowindow1.close();
+                                                            infowindow2.close();
+                                                            infowindow3.close();
+                                                            infowindow4.close();
+                                                            infowindow5.close();
+                                                            infowindow6.close();
+                                                            infowindow7.close();
+                                                           infowindow.open(map, marker);
 });
 
 var infowindowi = new google.maps.InfoWindow({
