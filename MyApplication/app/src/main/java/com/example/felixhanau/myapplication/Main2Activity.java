@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.view.View;
 import android.webkit.WebView;
 import android.view.View.OnKeyListener;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageInfo;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -24,9 +26,19 @@ public class Main2Activity extends AppCompatActivity {
                     String[] address = {"Wallstraße+11", "Kaiser-Friedrich-Promenade+11", "Kaiser-Friedrich-Promenade+14", "Obergasse+15", "Kaiser-Friedrich-Promenade+74",
                             "Kaiser-Friedrich-Promenade+76", "Georg-Speyer-Straße+4", "Kisseleffstraße+14",
                             "Louisenstraße+97", "Schöne Aussicht+24", "Schwedenpfad+22"};
-                    Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?daddr=" + address[num] + ",+Bad+Homburg"); // Too aggressive
+                    Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?daddr=" + address[num] + ",+Bad+Homburg");
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                    mapIntent.setPackage("com.google.android.apps.maps");
+
+                    String package1 = "com.google.android.apps.maps";
+
+                    PackageManager pm=getPackageManager();
+                    try {
+                        PackageInfo info=pm.getPackageInfo("com.google.android.apps.maps",PackageManager.GET_META_DATA);
+                    } catch (PackageManager.NameNotFoundException e) {
+                        package1 = "com.google.android.browser";
+                    }
+
+                    mapIntent.setPackage(package1);
                     startActivity(mapIntent);
                     return true;
                 }
